@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging.Abstractions;
 using Shop.Orders.Api;
+using Shop.Orders.Api.Functions;
 using Shop.Orders.Application.Data;
 using Shop.Orders.Repository.InMemory;
 using System;
@@ -32,6 +33,7 @@ namespace Shop.Orders.ComponentTests
                 .ConfigureServices(services =>
                 {
                     services.AddScoped<CreateOrderFunction>();
+                    services.AddScoped<GetOrderFunction>();
                     RegisterMocks(services);
                 })
                 .ConfigureAppConfiguration((_, configBuilder) => configBuilder.AddInMemoryCollection(config))

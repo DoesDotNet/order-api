@@ -37,6 +37,9 @@ namespace Shop.Orders.Api.Functions
 
             var orderDataView = await _mediator.Send(query, cancellationToken);
 
+            if (orderDataView == null)
+                return new NotFoundResult();
+
             return new OkObjectResult(orderDataView);
         }
     }

@@ -20,6 +20,8 @@ namespace Shop.Orders.Application.Queries
         public async Task<OrderDataView> Handle(GetOrder query, CancellationToken cancellationToken)
         {
             var order = await _repository.Get(query.Id);
+            if (order == null)
+                return null;
 
             return new OrderDataView
             {

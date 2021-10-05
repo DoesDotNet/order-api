@@ -1,16 +1,15 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using MediatR;
-using Shop.Orders.Api.Models;
 using Newtonsoft.Json;
+using Shop.Orders.Api.Models;
 using Shop.Orders.Application.Commands;
+using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Shop.Orders.Api
 {

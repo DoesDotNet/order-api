@@ -26,7 +26,7 @@ namespace Shop.Orders.ComponentTests
         public async Task CreateOrderWithInvalidIdReturns400()
         {
             // Arrange
-            string body = "{\"id\":\"00000000-0000-0000-0000-000000000000\", \"customerId\": \"a13c0bc2-d4c6-4e34-9c72-ea299e185b9d\"}";
+            string body = "{\"id\":\"00000000-0000-0000-0000-000000000000\", \"customerId\": \"b13c0bc2-d4c6-4e34-9c72-ea299e185b9d\"}";
             var bodyStream = new MemoryStream(Encoding.UTF8.GetBytes(body));
 
             var request = new DefaultHttpContext().Request;
@@ -64,7 +64,7 @@ namespace Shop.Orders.ComponentTests
         public async Task CreateOrderWithValidRequestReturn201()
         {
             // Arrange
-            string body = "{\"id\":\"733b43eb-57cf-4e2f-870b-b7954f9cbd00\", \"customerId\": \"a13c0bc2-d4c6-4e34-9c72-ea299e185b9d\"}";
+            string body = "{\"id\":\"733b43eb-57cf-4e2f-870b-b7954f9cbd00\", \"customerId\": \"b13c0bc2-d4c6-4e34-9c72-ea299e185b9d\"}";
             var bodyStream = new MemoryStream(Encoding.UTF8.GetBytes(body));
 
             var request = new DefaultHttpContext().Request;
@@ -83,7 +83,7 @@ namespace Shop.Orders.ComponentTests
 
             Assert.NotNull(order);
             Assert.Equal(new Guid("733b43eb-57cf-4e2f-870b-b7954f9cbd00"), order.Id);
-            Assert.Equal(new Guid("a13c0bc2-d4c6-4e34-9c72-ea299e185b9d"), order.CustomerId);
+            Assert.Equal(new Guid("b13c0bc2-d4c6-4e34-9c72-ea299e185b9d"), order.CustomerId);
         }
     }
 }
